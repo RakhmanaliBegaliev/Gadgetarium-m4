@@ -4,6 +4,415 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+        width: 100%;
+        height: 75px;
+        box-shadow: 0 4px rgba(0, 0, 0, .1);
+        position: absolute;
+        background: #1A1A25;
+
+    }
+
+    .navbar .container {
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-menu {
+        font-family: 'Inter', sans-serif;
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .navbar-menu li {
+        display: inline-block;
+    }
+
+    .navbar-menu li a {
+        display: inline-block;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 16px;
+
+    }
+
+    .navbar-wrap {
+        margin-bottom: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: hidden;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .phone_number {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-decoration: none;
+        margin-right: 10px;
+
+        color: #FFFFFF;
+    }
+
+    .navbar-brand {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        text-decoration: none;
+        color: white;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .gadgetarium::first-letter {
+        background-color:#CB11AB;
+        color: white; /* изменение цвета текста, чтобы он был виден на фоне */
+        padding: 0 5px; /* добавление отступов для улучшения визуального восприятия */
+    }
+
+    .menu {
+        height: 96px;
+        background-color: #1A1A25;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        margin-top: 75px;
+    }
+
+    .catalog-link {
+        border: 2px solid #333;
+        padding: 12px 14px;
+        background-color: #CB11AB;
+    ;
+    }
+
+    .catalog-link span {
+        margin-left: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 25px;
+    }
+
+    nav .right-buttons {
+        margin-left: auto;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        height: 40px;
+        padding: 0 20px;
+        width: 840px;
+        background-color: #1A1A25;
+    }
+
+    .search-label {
+        margin-right: 20px;
+        font-size: 10px;
+    }
+
+    input[type="text"] {
+        border: none;
+        width: 100%;
+        height: 80%;
+        font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+        outline: none;
+    }
+
+    ion-icon {
+        font-size: 24px;
+    }
+
+    .search-box ion-icon {
+        margin-left: auto;
+        color: white;
+    }
+
+    .search-box:hover, .search-box:focus-within {
+        border-color: white;
+    }
+
+    .search-box:hover input[type="text"], .search-box:focus-within input[type="text"] {
+        color: black;
+    }
+
+    .search-box:hover .search-label, .search-box:focus-within .search-label {
+        color: white;
+    }
+
+    .search-box:hover ion-icon, .search-box:focus-within ion-icon {
+        color: green;
+    }
+
+
+    .phone-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .phone_number {
+        margin-right: 10px;
+    }
+    .login_btn {
+        width: 24px;
+        height: 15px;
+        background-color: white;
+        display: inline-block;
+        vertical-align: middle;
+        color: white;
+    }
+
+    .sale{
+        font-family: ubuntu;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 33px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 170px;
+    }
+    .smartphone {
+        float: left;
+        width: 300px;
+        height: 495px;
+        margin: 0px;
+    }
+    .product::after {
+        content: "";
+        display: table;
+        clear: both;
+        width: 18%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .image {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image img {
+        align-items: center;
+        justify-content: center;
+        height: 236px;
+        width:  180px;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    .info{
+        float: left;
+        width: 250px;
+        margin: 10px;
+    }
+    .info h3 {
+        margin-bottom: 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: capitalize;
+        color: #292929;
+    }
+
+    .rating {
+        margin-bottom: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    .rating li {
+        display: inline-block;
+        color: #F99808;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+
+    }
+
+    .text-rating {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        opacity: 0.5;
+    }
+
+    .size-of-review {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        opacity: 0.5;
+    }
+
+    .info-price {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .add-to-card {
+        border: none;
+        width: 151px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #CB11AB;
+        color: #FFFFFF;
+        border-radius: 5px;
+
+    }
+
+    .price-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .new-price {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    .old-price {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: line-through;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+    .compare-favorite button {
+        float: right;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        color: #333;
+        font-size: 5px;
+        padding: 5px 5px;
+        margin-right: 3px;
+    }
+
+    .compare-favorite button:hover {
+        background-color: #ddd;
+        border: 1px solid #aaa;
+        color: #333;
+        cursor: pointer;
+    }
+    /* -33% */
+
+    .discount-circle {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #FFFFFF;
+        float: left;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #F10000CC;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .gadgetarium::first-letter {
+        background-color:#CB11AB;
+        color: white; /* изменение цвета текста, чтобы он был виден на фоне */
+        padding: 0 5px; /* добавление отступов для улучшения визуального восприятия */
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 170px;
+        box-shadow: 0 4px rgba(0, 0, 0, .1);
+        position: absolute;
+        background: #1A1A25;
+    }
+
+    .footer-content h5 {
+        text-transform: capitalize;
+        line-height: 3rem;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer-content p {
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        color: white;
+    }
+</style>
 <body>
 <div class="navbar-wrap">
     <nav class="navbar">
@@ -21,6 +430,8 @@
             <div class="phone-wrapper">
                 <a href="#" class="phone_number">+996 (400) 00-00-00</a>&nbsp;
                 <a href="#" class="login_btn"><ion-icon name="person-circle-outline"></ion-icon></a>
+                </div>
+        </div>
     </nav>
     <nav class="menu">
         <ul>
@@ -118,7 +529,7 @@
                 <button class="compare"><ion-icon name="swap-horizontal-outline"></ion-icon></button>
                 <button class="favorite"><ion-icon name="heart-outline"></ion-icon></button>
             </div>
-            <br></br>
+            <br>
             <div class="image"><img src="https://productimages.hepsiburada.net/s/189/375/110000155170747.jpg" alt="image-53.jpg" border="0"></div>
             <div class="info">
                 <h3>Смартфон Apple iPhone 13 <br> 256gb синий 9(MLP3RU... </h3>
@@ -147,7 +558,7 @@
                 <button class="compare"><ion-icon name="swap-horizontal-outline"></ion-icon></button>
                 <button class="favorite"><ion-icon name="heart-outline"></ion-icon></button>
             </div>
-            <br></br>
+            <br>
             <div class="image"><img src="https://productimages.hepsiburada.net/s/189/375/110000155170747.jpg" alt="image-53.jpg" border="0"></div>
             <div class="info">
                 <h3>Смартфон Apple iPhone 13 <br> 256gb синий 9(MLP3RU... </h3>
@@ -175,7 +586,7 @@
             <button class="compare"><ion-icon name="swap-horizontal-outline"></ion-icon></button>
             <button class="favorite"><ion-icon name="heart-outline"></ion-icon></button>
         </div>
-        <br></br>
+        <br>
         <div class="image"><img src="https://productimages.hepsiburada.net/s/189/375/110000155170747.jpg" alt="image-53.jpg" border="0"></div>
         <div class="info">
             <h3>Смартфон Apple iPhone 13 <br> 256gb синий 9(MLP3RU... </h3>
@@ -207,7 +618,7 @@
 
 
     <div class="sale">Новинки</div>
-    <br></br>
+    <br>
     <div class="product">
         <div class="smartphone">
             <div class="discount-circle">New</div>
@@ -359,7 +770,7 @@
 
 
     <div class="sale">Мы рекомендуем</div>
-    <br></br>
+    <br>
     <div class="product">
         <div class="smartphone">
             <div class="discount-circle"><ion-icon name="thumbs-up"></ion-icon></div>
@@ -514,6 +925,6 @@
             <p>&copy 2022 Gadgetarium. Интернет магазин <br> Все права защищены</p>
         </div>
     </footer>
-
+    </div>
 </body>
 </html>
